@@ -18,7 +18,8 @@ public static class AliceAwake {
 }
 "@
 # ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_AWAYMODE_REQUIRED
-[AliceAwake]::SetThreadExecutionState([uint32]0x80000000 -bor [uint32]0x00000001 -bor [uint32]0x00000040) | Out-Null
+$stayAwake = [uint32]([int64]2147483648 -bor 1 -bor 64)
+[AliceAwake]::SetThreadExecutionState($stayAwake) | Out-Null
 
 Write-Host "Starting alice-laptop for $Repo"
 Write-Host "Plug the laptop in. This process must stay running."
