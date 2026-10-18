@@ -1,0 +1,20 @@
+{
+  "name": "alice",
+  "private": true,
+  "type": "module",
+  "description": "agent project: alice",
+  "scripts": {
+    "alice": "bdk serve --dir . --mode single --dev --host 127.0.0.1 --port 3000 --state-root ./data/bdk-state",
+    "telegram": "node scripts/telegram-poll.mjs",
+    "check": "tsc --noEmit",
+    "dev": "bdk dev"
+  },
+  "dependencies": {
+    "@cursor/bdk": "^0.2.25",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "6.0.3"
+  }
+}
